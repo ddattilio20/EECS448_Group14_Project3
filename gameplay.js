@@ -12,7 +12,7 @@ function randomizeCases(Cases)
 //Function for calculating the expected payout of remaining cases
 function expectedPayout(){
   //number of cases left
-  let n = caseValues.length();
+  let n = caseValues.length;
 
   //probability of selecting each case
   let Px = (1/n);
