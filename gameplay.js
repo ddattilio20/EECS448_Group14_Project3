@@ -7,6 +7,16 @@ let basePayout = 11246.7697;
 //Global variable for bank offer
 let bankOffer = 0;
 
+
+//cases stored in array of Cases, which consists of CaseName and CaseNumber tuples
+//Global array that will be modified throughout the game
+let cases = [];
+
+function setupCases()
+{
+  
+}
+
 function randomizeCases(Cases)
 {
   //  Cases.length  
