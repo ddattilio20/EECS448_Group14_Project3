@@ -90,7 +90,11 @@ function gameplayLoop() {
 	}*/
 }
 
-//from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+
+/**
+ * @desc pseudorandomly shuffles array (from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
+ * @returns shuffled array
+ */
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
 
@@ -109,6 +113,11 @@ function shuffle(array) {
   return array;
 }
 
+
+/**
+ * @desc pseudorandomly shuffles cases
+ * @returns 
+ */
 function randomizeCases(Cases)
 {
   //  Cases.length  
@@ -117,7 +126,10 @@ function randomizeCases(Cases)
 }
 
 
-//returns the case that was separated while keeping the order of the cases the same (1,2,3,4 -> remove 3 -> 1,2,4)
+/**
+ * @desc removes selected case while keeping the order of the cases the same (1,2,3,4 -> remove 3 -> 1,2,4)
+ * @returns cases that was separated
+ */
 function separateCase(choice, cases)
 {
         let tmp=cases[choice-1];
