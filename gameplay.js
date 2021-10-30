@@ -32,7 +32,7 @@ function gameplayLoop() {
 	
 	result = "";
 	while (!Number.isInteger(result) || !cases.includes(result)) {
-		result = parseInt(window.prompt("Pick a case to hold", ""));
+		result = parseInt(window.prompt("Pick a case to hold (between 1 and 26)", ""));
 		console.log(result);
 	}
 	idx = cases.indexOf(result);
@@ -68,6 +68,11 @@ function gameplayLoop() {
 		}
 		if (result == "Y") {
 			console.log("You won $" + offer + "!\n");
+			console.log("Your case had a value of $" + heldValue + ".");
+			if (heldValue <= offer) 
+				console.log("You made a good deal!");
+			else
+				console.log("You made a bad deal!");
 			return;
 		}
 		i = (i > 1) ? i-1 : 1;
