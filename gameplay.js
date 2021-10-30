@@ -1,5 +1,5 @@
 //Array for case values
-let caseValues = [0.01,1,5,10,25,50,75,100,200,300,400,500,750,1000,5000,10000,25000,75000,100000,200000,300000,400000,500000,750000,1000000];
+let caseValues = [0.01,1,5,10,25,50,75,100,200,300,400,500,750,1000,5000,10000,25000,50000,75000,100000,200000,300000,400000,500000,750000,1000000];
 
 //Payout if all cases are there
 let basePayout = 11246.7697;
@@ -10,9 +10,11 @@ let bankOfferNum = 0;
 
 //cases stored in array of Cases, which consists of CaseName and CaseNumber tuples
 //Global array that will be modified throughout the game
-let cases = [];
+let cases = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26];
 //do we need a player global variable? what to keep track of there?
 
+let heldCase = -1;
+let heldValue = 0;
 
 //this way we can reset the cases for new game and or make sure cases are all there or something 
 /*
@@ -24,6 +26,64 @@ function setupCases(cases, caseValues)
   }
 }
 */
+
+function gameplayLoop() {
+	caseValues = shuffle(caseValues);
+	
+	result = "";
+	while (!Number.isInteger(result) || !cases.includes(result)) {
+		result = parseInt(window.prompt("Pick a case to hold", ""));
+		console.log(result);
+	}
+	idx = cases.indexOf(result);
+	heldCase = result;
+	heldValue = caseValues[idx];
+	caseValues.splice(idx, 1);
+	cases.splice(idx, 1);
+	console.log(cases);
+	
+	i = 6;
+	while (cases.length > 2) {
+		console.log("You have " + i + " cases to eliminate this round.\n");
+		for (j = i; j > 0; j--) {
+			result = "";
+			while (!Number.isInteger(result) || !cases.includes(result)) {
+				result = parseInt(window.prompt("Pick a case to eliminate", ""));
+			}
+			idx = cases.indexOf(result);
+			console.log("You eliminated case " + result + " which contained $" + caseValues[idx] + ".\n");
+			caseValues.splice(idx, 1);
+			cases.splice(idx, 1);
+			console.log("The remaining cases are " + cases + ".\n");
+			temp = [heldValue].concat(caseValues).sort((a, b) => a - b);
+			console.log("The remaining values are " + temp + ".\n");
+		}
+		offer = bankOffer();
+		console.log("You have received an offer from the banker: $" + offer + " for your case.\n");
+		
+		result = "";
+		while (result != "Y" && result != "N") {
+			result = window.prompt("Deal or no deal (y/n)?", "");
+			result = result.toUpperCase();
+		}
+		if (result == "Y") {
+			console.log("You won $" + offer + "!\n");
+			return;
+		}
+		i = (i > 1) ? i-1 : 1;
+	}
+	console.log("You won $" + heldValue + "!\n");
+	/*console.log("There are two cases left, the one you have and one more case. They contain $" + heldValue + " or $" + caseValues[0] + ".\n");
+	result = "";
+	while (result != "Y" && result != "N") {
+		result = window.prompt("Would you like to swap cases (y/n)?", "");
+		result = result.toUpperCase();
+	}
+	switch (result) {
+		case "Y": console.log("You won $" + caseValues[0] + "!\n"); break;
+		case "N": console.log("You won $" + heldValue + "!\n"); break;
+	}*/
+}
 
 //from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffle(array) {
