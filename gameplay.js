@@ -165,6 +165,7 @@ function bankOffer(){
   if(expPayout <= basePayout)
   {
     let rand = Math.random() * (1 - .75) + .75;
+    console.log(rand);
     //multiplies by random number from .75-.99
     bankOfferNum = expPayout * rand;
   }
@@ -172,6 +173,7 @@ function bankOffer(){
   else if(expPayout > basePayout)
   {
     let rand = Math.random() * (1.81 - 1.1) + 1.1;
+    console.log(rand);
     //multiplies by random number from 1.1-1.8
     bankOfferNum = expPayout * rand;
   }
