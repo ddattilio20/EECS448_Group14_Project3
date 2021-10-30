@@ -31,7 +31,7 @@ function startButtonRegister() {
 
 
 
-
+//onclick function to show alert for instructions
 function instructionAlert(){
     let instruction = "";
     alert(instruction);
