@@ -51,7 +51,7 @@ function gameplayLoop() {
 				result = parseInt(window.prompt("Pick a case to eliminate", ""));
 			}
 			idx = cases.indexOf(result);
-			console.log("You eliminated case " + result + " which contained $" + caseValues[idx] + ".\n");
+			console.log("You eliminated case " + result + " which contained " + formatMoney(caseValues[idx]) + ".\n");
 			caseValues.splice(idx, 1);
 			cases.splice(idx, 1);
 			console.log("The remaining cases are " + cases + ".\n");
@@ -59,7 +59,7 @@ function gameplayLoop() {
 			console.log("The remaining values are " + temp + ".\n");
 		}
 		offer = bankOffer();
-		console.log("You have received an offer from the banker: $" + offer + " for your case.\n");
+		console.log("You have received an offer from the banker: " + formatMoney(offer) + " for your case.\n");
 		
 		result = "";
 		while (result != "Y" && result != "N") {
@@ -67,8 +67,8 @@ function gameplayLoop() {
 			result = result.toUpperCase();
 		}
 		if (result == "Y") {
-			console.log("You won $" + offer + "!\n");
-			console.log("Your case had a value of $" + heldValue + ".");
+			console.log("You won " + formatMoney(offer) + "!\n");
+			console.log("Your case had a value of " + formatMoney(heldValue) + ".");
 			if (heldValue <= offer) 
 				console.log("You made a good deal!");
 			else
@@ -176,4 +176,10 @@ function bankOffer(){
 
 return bankOfferNum;
 
+}
+
+
+//from https://stackoverflow.com/questions/4022171/how-do-i-print-currency-format-in-javascript
+function formatMoney(number) {
+   return '$'+ number.toLocaleString('en-US');
 }
