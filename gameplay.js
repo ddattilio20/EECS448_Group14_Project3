@@ -135,7 +135,10 @@ function separateCase(choice, cases)
 
 
 
-//Function for calculating the expected payout of remaining cases
+/**
+ * @desc function that calculates the expected value of the remaining cases
+ * @returns expected value of remaining cases
+ */
 function expectedPayout(){
   //number of cases left
   let n = caseValues.length;
@@ -151,12 +154,15 @@ function expectedPayout(){
   {
     payout = payout + (caseValues[i]*Px)
   }
-  console.log(payout);
   return payout;
 }
 
 
-//Method for determining the bank's offer each turn
+
+/**
+ * @desc function that takes expected value of remaining cases and multiplies by random double in a specific range to generate offer from bank
+ * @returns the offer from the bank
+ */
 function bankOffer(){
   //calls expectedPayout method to get value of the current expected payout
   let expPayout = expectedPayout();
@@ -165,7 +171,6 @@ function bankOffer(){
   if(expPayout <= basePayout)
   {
     let rand = Math.random() * (1 - .75) + .75;
-    console.log(rand);
     //multiplies by random number from .75-.99
     bankOfferNum = expPayout * rand;
   }
@@ -173,7 +178,6 @@ function bankOffer(){
   else if(expPayout > basePayout)
   {
     let rand = Math.random() * (1.81 - 1.1) + 1.1;
-    console.log(rand);
     //multiplies by random number from 1.1-1.8
     bankOfferNum = expPayout * rand;
   }
