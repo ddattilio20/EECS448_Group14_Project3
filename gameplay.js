@@ -164,14 +164,16 @@ function bankOffer(){
   //if expected value of remaining cases is less than initial expected value
   if(expPayout <= basePayout)
   {
+    let rand = Math.random() * (1 - .75) + .75;
     //multiplies by random number from .75-.99
-    bankOfferNum = expPayout * Math.random() * (1 - .75) + .75;
+    bankOfferNum = expPayout * rand;
   }
   //if expected value of remaining cases is greater than initial expected value
   else if(expPayout > basePayout)
   {
+    let rand = Math.random() * (1.81 - 1.1) + 1.1;
     //multiplies by random number from 1.1-1.8
-    bankOfferNum = expPayout * Math.random() * (1.81 - 1.1) + 1.1;
+    bankOfferNum = expPayout * rand;
   }
 
 return bankOfferNum;
