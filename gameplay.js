@@ -93,25 +93,22 @@ function expectedPayout(){
 
 //Method for determining the bank's offer each turn
 function bankOffer(){
+  //calls expectedPayout method to get value of the current expected payout
   let expPayout = expectedPayout();
 
   //if expected value of remaining cases is less than initial expected value
   if(expPayout <= basePayout)
   {
     //multiplies by random number from .75-.99
-    bankOffer = expPayout * Math.random() * (1 - .75) + .75;
+    bankOfferNum = expPayout * Math.random() * (1 - .75) + .75;
   }
   //if expected value of remaining cases is greater than initial expected value
   else if(expPayout > basePayout)
   {
     //multiplies by random number from 1.1-1.8
-    bankOffer = expPayout * Math.random() * (1.81 - 1.1) + 1.1;
+    bankOfferNum = expPayout * Math.random() * (1.81 - 1.1) + 1.1;
   }
 
-
-
-
-return bankOffer;
-
+return bankOfferNum;
 
 }
