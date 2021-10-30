@@ -77,7 +77,7 @@ function gameplayLoop() {
 		}
 		i = (i > 1) ? i-1 : 1;
 	}
-	console.log("You won $" + heldValue + "!\n");
+	console.log("You have chosen your case and have won $" + heldValue + "!\n");
 	/*console.log("There are two cases left, the one you have and one more case. They contain $" + heldValue + " or $" + caseValues[0] + ".\n");
 	result = "";
 	while (result != "Y" && result != "N") {
