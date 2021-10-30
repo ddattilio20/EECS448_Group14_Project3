@@ -27,3 +27,12 @@ function startButtonRegister() {
 		gameplayLoop();
     });
 }
+
+
+
+
+
+function instructionAlert(){
+    let instruction = "";
+    alert(instruction);
+}
