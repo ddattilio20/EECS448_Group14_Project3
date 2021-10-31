@@ -27,6 +27,9 @@ function setupCases(cases, caseValues)
 }
 */
 
+/**
+ * @desc This function runs the main gameplay loop, we allow it to access and modify global game data
+ */
 function gameplayLoop() {
 	caseValues = shuffle(caseValues);
 	

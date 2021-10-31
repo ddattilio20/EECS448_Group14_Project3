@@ -1,3 +1,8 @@
+/**
+ * @name Unnamed_window_load_event
+ * @desc Wait for all files to be loaded before running scripts
+ * @listens load
+ */
 window.addEventListener("load", () => {
     /*g_canvas = document.querySelector("#canvas");
     g_context = canvas.getContext('2d');
