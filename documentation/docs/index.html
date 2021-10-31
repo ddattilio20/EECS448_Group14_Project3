@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset='utf-8'>
+  <title>  | Documentation</title>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <link href='assets/bass.css' rel='stylesheet'>
+  <link href='assets/style.css' rel='stylesheet'>
+  <link href='assets/github.css' rel='stylesheet'>
+  <link href='assets/split.css' rel='stylesheet'>
+</head>
+<body class='documentation m0'>
+    <div class='flex'>
+      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
+        <div class='py1 px2'>
+          <h3 class='mb0 no-anchor'></h3>
+          <div class='mb1'><code></code></div>
+          <input
+            placeholder='Filter'
+            id='filter-input'
+            class='col12 block input'
+            spellcheck='false'
+            autocapitalize='off'
+            autocorrect='off'
+            type='text' />
+          <div id='toc'>
+            <ul class='list-reset h5 py1-ul'>
+              
+                
+                <li><a
+                  href='#gameplayloop'
+                  class="">
+                  gameplayLoop
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#shuffle'
+                  class="">
+                  shuffle
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#randomizecases'
+                  class="">
+                  randomizeCases
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#separatecase'
+                  class="">
+                  separateCase
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#expectedpayout'
+                  class="">
+                  expectedPayout
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#bankoffer'
+                  class="">
+                  bankOffer
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#unnamed_window_load_event'
+                  class="">
+                  Unnamed_window_load_event
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#startbuttonregister'
+                  class="">
+                  startButtonRegister
+                  
+                </a>
+                
+                </li>
+              
+            </ul>
+          </div>
+          <div class='mt1 h6 quiet'>
+            <a href='https://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
+          </div>
+        </div>
+      </div>
+      <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='gameplayloop'>
+      gameplayLoop
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ddattilio20/EECS448_Group14_Project3/blob/dc6329c2a5b3f8ac8aa58d53ca6ab6d64a17861f/gameplay.js#L33-L94'>
+      <span>gameplay.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>This function runs the main gameplay loop, we allow it to access and modify global game data</p>
+
+    <div class='pre p1 fill-light mt0'>gameplayLoop()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='shuffle'>
+      shuffle
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ddattilio20/EECS448_Group14_Project3/blob/dc6329c2a5b3f8ac8aa58d53ca6ab6d64a17861f/gameplay.js#L101-L117'>
+      <span>gameplay.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>pseudorandomly shuffles array (from <a href="https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array">https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array</a>)</p>
+
+    <div class='pre p1 fill-light mt0'>shuffle(array: any): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>array</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        shuffled array
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='randomizecases'>
+      randomizeCases
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ddattilio20/EECS448_Group14_Project3/blob/dc6329c2a5b3f8ac8aa58d53ca6ab6d64a17861f/gameplay.js#L124-L129'>
+      <span>gameplay.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>pseudorandomly shuffles cases</p>
+
+    <div class='pre p1 fill-light mt0'>randomizeCases(Cases: any)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>Cases</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='separatecase'>
+      separateCase
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ddattilio20/EECS448_Group14_Project3/blob/dc6329c2a5b3f8ac8aa58d53ca6ab6d64a17861f/gameplay.js#L136-L149'>
+      <span>gameplay.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>removes selected case while keeping the order of the cases the same (1,2,3,4 -> remove 3 -> 1,2,4)</p>
+
+    <div class='pre p1 fill-light mt0'>separateCase(choice: any, cases: any): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>choice</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>cases</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        cases that was separated
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='expectedpayout'>
+      expectedPayout
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ddattilio20/EECS448_Group14_Project3/blob/dc6329c2a5b3f8ac8aa58d53ca6ab6d64a17861f/gameplay.js#L157-L173'>
+      <span>gameplay.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>function that calculates the expected value of the remaining cases</p>
+
+    <div class='pre p1 fill-light mt0'>expectedPayout(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        expected value of remaining cases
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='bankoffer'>
+      bankOffer
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ddattilio20/EECS448_Group14_Project3/blob/dc6329c2a5b3f8ac8aa58d53ca6ab6d64a17861f/gameplay.js#L181-L202'>
+      <span>gameplay.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>function that takes expected value of remaining cases and multiplies by random double in a specific range to generate offer from bank</p>
+
+    <div class='pre p1 fill-light mt0'>bankOffer(): any</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code>any</code>:
+        the offer from the bank
+
+      
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='unnamed_window_load_event'>
+      Unnamed_window_load_event
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ddattilio20/EECS448_Group14_Project3/blob/dc6329c2a5b3f8ac8aa58d53ca6ab6d64a17861f/main.js#L6-L20'>
+      <span>main.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>Wait for all files to be loaded before running scripts</p>
+
+    <div class='pre p1 fill-light mt0'>Unnamed_window_load_event</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='startbuttonregister'>
+      startButtonRegister
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ddattilio20/EECS448_Group14_Project3/blob/dc6329c2a5b3f8ac8aa58d53ca6ab6d64a17861f/main.js#L26-L34'>
+      <span>main.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>This function adds an event listener for the start button</p>
+
+    <div class='pre p1 fill-light mt0'>startButtonRegister()</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+      </div>
+    </div>
+  <script src='assets/anchor.js'></script>
+  <script src='assets/split.js'></script>
+  <script src='assets/site.js'></script>
+</body>
+</html>
